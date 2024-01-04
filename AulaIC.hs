@@ -41,3 +41,16 @@ pegaparimpar []  l1 l2 = (l1,l2) -- tupla
 pegaparimpar (cab:cau) l1 l2
  | mod cab 2 == 0 = cab:pegaparimpar cau (cab:l1) l2
  | otherwise =  pegaparimpar cau l1 (cab:l2)
+
+
+
+ mod x == 0 funcao par
+ not(mod x = 0) funcao impar
+
+ INVERTE
+
+inverte ::[Int]->[Int]->[Int]
+inverte [] lst = lst
+inverte (cab:cau) lst = inverte cau (cab:lst)
+
+rverte lst = inverte lst []
