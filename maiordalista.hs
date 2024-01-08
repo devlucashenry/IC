@@ -50,3 +50,15 @@ maiorlista lista = dobraR maior (-100000) lista
 
 --encontrarMaior :: [Int] -> Int
 --encontrarMaior lista = dobraR maior (-1000000) lista
+
+dobraR :: (b -> a -> b) -> b -> [a] -> b
+dobraR _ v [] = v
+dobraR f v (cab:cau) = f (dobraR f v cau) cab
+
+maior :: Int -> Int -> Int
+maior a b
+  | a > b = a
+  | otherwise = b
+
+encontrarMaior :: [Int] -> Int
+encontrarMaior lista = dobraR maior (-1000000) lista

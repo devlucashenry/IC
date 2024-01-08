@@ -54,3 +54,13 @@ inverte [] lst = lst
 inverte (cab:cau) lst = inverte cau (cab:lst)
 
 rverte lst = inverte lst []
+
+
+CONCATENACAO
+
+--lst1 =[2,3,4,6]
+--lst2 = [4,5,6]
+
+concatenarRecursivo :: [a] -> [a] -> [a]
+concatenarRecursivo [] lista2 = lista2
+concatenarRecursivo (x:xs) lista2 = x : concatenarRecursivo xs lista2
