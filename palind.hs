@@ -1,6 +1,8 @@
-palind :: String -> Bool
-palind s = s == inverteString s
+palind::String->Bool
+palind (x:xs)
+ |(x:xs) == reverte (x:xs) = True
+ |otherwise = False
 
-inverteString :: String -> String
-inverteString [] = []
-inverteString (cab:cau) = inverteString cau ++ [cab]
+reverte lst = inverte lst []
+
+inverte (x:xs) y = inverte xs (x:y)

@@ -1,4 +1,4 @@
---lista ::[Int]
+{--lista ::[Int]
 --lista = [1..200000]
 
 -- head list (para ver a cabeca)
@@ -64,3 +64,100 @@ CONCATENACAO
 concatenarRecursivo :: [a] -> [a] -> [a]
 concatenarRecursivo [] lista2 = lista2
 concatenarRecursivo (x:xs) lista2 = x : concatenarRecursivo xs lista2
+
+
+ORDENACAO POR SELECAO USANDO ESSAS DUAS FUNCOES --}
+
+maior::[Int]->int
+maior [x] = []
+maior (x,y,xs)
+ |x > y = maior (x:xs)
+ |otherwise = maior(y:xs)
+
+remMaior::[Int]->[Int]
+remMaior [x] = []
+remMaior (x,y,xs)
+ |x > y = y:remMaior(x:xs)
+ |otherwise = x:remMaior(y:xs)
+
+--lst = [2,4,3,5,1]
+ordenaSel [] = []
+ordenaSel lst = maior lst: ordenaSel(remMaior) --em ordem decrescente
+ordena2 [] = []
+ordena2 = ordena2 (remMaior lst) ++ [maior lst] -- em ordem crescente
+
+prova dia 19
+
+
+BUSCA OCORRENCIA
+busca x [] = false
+busca x (y:ys)
+ |x == y = True -- ou [x]
+ |otherwise = busca x ys
+
+ BUSCA TOTAL
+
+BuscaT x [] = 0
+buscaT x (y:ys)
+ |x == y = 1 + buscaT x ys
+ |otherwise = 0 + buscaT x ys
+
+ALGORITMO
+Implementacao de algoritmos
+
+PROVA
+maior de tantos numeros
+ordene uma sequencia de numeros
+
+ex
+dado um alista de nuemros previamente ordenados
+[3,6,9,12,17]
+dado x , insira na lista em ordem
+
+
+[2,3,8,12,14]
+insere x [] = [x]
+insere x (y:ys)
+
+dado um x
+|x > y = x:y:ys
+| otherwise = insere x ys
+
+
+Getline
+
+import Data.char (chama funcao ord e funcao de caracter)
+main = do
+
+
+
+PROVA PASSADO DE IC
+Palind
+Insere numero na lista
+Maisnum inserir u numero no final da lista e somar com todos os elementos dentro da lista
+
+FUNCAO DE ALTA ORDEM
+Padrao de Representação
+ assinatura
+ exemplo
+ f1:: Int->Int->int
+ f2:: (Int->Int->Int)->Int->Int-Int
+
+exemplo
+
+aplica f [x,y,z]
+
+aplica [fx,fy,fz]
+aplica dobro [2,3,4] = [4,6,10]
+
+padrao de comportamento chamda de map (mapeamento)
+
+soma5::Int->Int
+soma5 cab = cab + 5
+mapA soma5 [1,2,3,4,5]
+
+
+mapA (> 4) [3,4,5,6,7]
+
+
+filtro (> 10) [1,2,3,4,5,15]
